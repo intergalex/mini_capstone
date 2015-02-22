@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  extra-small: MyString
+  small: MyString
+  medium: MyString
+  large: MyString
+  extra-large: MyString
+  baby: MyString
+
+two:
+  extra-small: MyString
+  small: MyString
+  medium: MyString
+  large: MyString
+  extra-large: MyString
+  baby: MyString

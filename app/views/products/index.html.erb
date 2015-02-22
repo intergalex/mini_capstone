@@ -1,0 +1,20 @@
+<h1><em> Things for now; from the past; for the future. </em></h1>
+
+
+<h3> Current stock! </h3>
+
+<hr> 
+
+  <div class="row">
+    <% @products.each do |product| %> 
+      <div class="col-md-4">
+        <a href="/products/<%= product.id %>"><h2><%= product.title %></h2>
+          <img src= "<%= product.image %>" alt="Go to product page" height="300"></a>
+          <h3> <%= number_to_currency(product.price) %> </h3> 
+          <h3><%= product.description %></h3>
+          <h3><%= product.brand %></h3>
+          <h3><%= product.category %></h3> 
+          <hr>
+      </div> 
+    <% end %>   
+  </div> 

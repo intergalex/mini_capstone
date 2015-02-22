@@ -1,0 +1,58 @@
+<h1> <%= @product.title %> </h1>
+<hr>
+
+
+<div class="row">
+  <div class="col-md-6">
+
+    <img src= "<%= @product.image %>" width="700" > 
+    <h2> <%= @product.discount %> <%= @product.sale %> </h2>
+    <hr> 
+    <a href="/products/<%= @product.id %>/edit">Edit</a> 
+    <a href="/products/<%= @product.id %>" data-method="delete" rel="nofollow" data-confirm="Are you sure?">Delete</a> 
+  </div> 
+
+  <div class="col-md-6">
+    <h2> Description: 
+    <ul>
+      <li> <%= @product.description %> </li>  
+    </ul> 
+    </h2> 
+    <h4> Category: <%= @product.category %> </h2>
+    <h4> Brand: <%= @product.brand %> </h2>
+    <h4> Vendor: <%= @product.vendor.name %> </h2>
+    <h3> Options: <% @product.product_options.each do |option| %> 
+      <ul>
+        <li><%= option.name %> </li> 
+      </ul>
+      <% end %> 
+    </h2>
+
+    <div class = "q">  
+      <table> 
+        <tr>
+          <td> Subtotal: </td> 
+          <td> <%= number_to_currency(@product.price) %>
+        </tr> 
+        <tr>
+          <td> Tax: </td> 
+          <td> <%= number_to_currency(@product.tax) %> </td> 
+        </tr> 
+        <tr> 
+          <td> Total: </td> 
+          <td> <%= number_to_currency(@product.total) %> </td>
+        </tr>  
+      </table>
+    </div> 
+
+    <%= form_tag('/orders') do %> 
+      <%= label_tag :quantity %>
+      <%= text_field_tag :quantity %>
+      <%= hidden_field_tag :product_id, @product.id %> 
+      <%= submit_tag "Buy" %>  
+
+    <% end %> 
+  
+  </div>
+</div>
+  
