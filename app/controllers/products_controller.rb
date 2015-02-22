@@ -51,7 +51,7 @@ class ProductsController < ApplicationController
   end 
 
   def create
-    @product = Product.create(:title => params[:title], :price => params[:price], :description => params[:description], :brand => params[:brand], :category => params[:category], :image => params[:image])
+    @product = Product.create(:title => params[:title], :price => params[:price], :description => params[:description], :brand => params[:brand], :category => params[:category], :image => params[:image], :vendor_id => params[:vendor_id])
     flash[:success] = "Product Added."
     redirect_to "/products/#{@product.id}"
   end
