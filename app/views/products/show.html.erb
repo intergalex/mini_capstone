@@ -45,13 +45,14 @@
       </table>
     </div> 
 
-    <%= form_tag('/orders') do %> 
+    <%= form_tag('/carted_products') do %> 
       <%= label_tag :quantity %>
       <%= text_field_tag :quantity %>
       <%= hidden_field_tag :product_id, @product.id %> 
       <%= submit_tag "Buy" %>  
 
-    <% end %> 
+    <% end %>   
+
   
   </div>
 </div>

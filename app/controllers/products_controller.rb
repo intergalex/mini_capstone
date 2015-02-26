@@ -29,7 +29,6 @@ class ProductsController < ApplicationController
     if params[:search]
       @products = @products.where('title LIKE ?', "%" + params[:search] + "%")
     end
-
   end 
 
   def show
@@ -38,8 +37,6 @@ class ProductsController < ApplicationController
     else 
       @product = Product.find(params[:id])
     end 
-
-    
   end
 
   def new  

@@ -5,6 +5,9 @@ class Order < ActiveRecord::Base
 
   SALES_TAX = 0.09
 
+  has_many :carted_products
+  has_many :products, :through => :carted_products
+
   def calculate_subtotal 
     return product.price * quantity
   end 
